@@ -1,0 +1,115 @@
+código Pull
+
+Git pull explicado
+Daniel Rosa
+Tradutor: Daniel Rosa
+freeCodeCamp.org
+Autor: freeCodeCamp.org (em inglês)
+Git pull explicado
+Artigo original: Git Pull Explained
+
+O git pull é um comando do Git usado para atualizar a versão local de um repositório a partir de uma versão remota.
+
+Ele é um dos quatro comandos que solicita a interação com a rede pelo Git. Por padrão, o git pull faz duas coisas.
+
+Atualiza o branch de trabalho local atual (o branch para a qual você fez o checkout nesse momento).
+Atualiza os branches de rastreamento remoto para todos os outros branches.
+O git pull obtém (git fetch) os novos commits e merges (git merge) desse branch e os coloca em seu branch local.
+
+A sintaxe desse comando é:
+
+# Formato geral
+git pull OPÇÕES REPOSITÓRIO REFSPEC
+
+# Pull de um branch específico
+git pull NOME-REMOTO NOME-BRANCH
+onde:
+
+OPÇÕES são as opções de comando, como --quiet ou --verbose. Você pode ler mais sobre as diversas opções na documentação do Git
+REPOSITÓRIO é o URL do seu repositório. Exemplo: https://github.com/freeCodeCamp/freeCodeCamp.git
+REFSPEC especifica quais referências devem ser obtidas (fetch) e quais referências locais devem ser atualizadas
+NOME-REMOTO é o nome do seu repositório remoto. Por exemplo: origin.
+NOME-BRANCH é o nome do seu branch. Por exemplo: develop.
+Observação
+
+Se houver mudanças das quais você ainda não fez um commit, a parte do merge do comando git pull não será realizada e seu branch local seguirá inalterado.
+
+Assim, você sempre deve fazer o commit de suas mudanças em um branch antes de fazer o pull de novos commits de um repositório remoto.
+
+Sumário
+
+Usando git pull
+Controle de versão distribuído
+git fetch + git merge
+git pull nos IDEs
+Usando git pull
+Use o git pull para atualizar o repositório local a partir do seu repositório remoto correspondente. Exemplo: ao trabalhar localmente com master/main, execute git pull para atualizar a cópia local de master/main e atualizar os outros branches de rastreamento remotos (para saber mais informações sobre os branches de rastreamento remotos, veja a próxima seção).
+
+Porém, você precisa se lembrar de algumas coisas para que o exemplo seja verdadeiro:
+
+O repositório local tem um repositório remoto vinculado
+
+Verifique isso com o comando git remote -v
+Se houver diversos repositórios remotos, o git pull pode não trazer informações suficientes. Você pode ter de inserir git pull origin ou git pull upstream.
+O branch no qual você fez o checkout neste momento tem um branch de rastreamento remoto correspondente
+
+Verifique isso com o comando git status. Se não houver um branch de rastreamento remoto, o Git não saberá onde ele deve buscar as informações para um pull.
+Controle de versão distribuído
+O Git é um Sistema de Controle de Versão Distribuído (DVCS). Com um DVCS, os desenvolvedores podem trabalhar no mesmo arquivo ao mesmo tempo em ambientes separados. Depois de fazer o push do código para o repositório remoto compartilhado, outros desenvolvedores podem fazer o pull do código modificado.
+
+Interações com a rede no Git
+Existem apenas quatro comandos que solicitam interações com a rede no Git. Um repositório local não tem ciência das alterações feitas em um repositório remoto até que haja uma solicitação de informações. Um repositório remoto também não tem ciência das alterações locais até que seja feito o push dos commits.
+
+Os quatro comandos de rede são:
+
+git clone
+git fetch
+git pull
+git push
+Branches no DVCS
+Ao trabalhar com o Git, pode parecer que há várias cópias do mesmo código flutuando por aí. Há versões diferentes do mesmo arquivo em cada branch. Assim, cópias diferentes dos mesmos branches no computador de cada desenvolvedor e no repositório remoto. Para acompanhar isso, o Git usa algo chamado branches de rastreamento remoto.
+
+Ao executar o comando git branch --all em um repositório do Git, os branches de rastreamento remoto aparecem na cor vermelha. Eles são cópias somente para leitura do código conforme ele aparece no branch remoto. Quando foi a última interação com a rede que pode ter buscado as informações localmente? Lembre-se de quando essas informações foram atualizadas pela última vez. As informações dos branches de rastreamento remoto refletem as informações dessa interação.
+
+Com branches de rastreamento remoto, você pode trabalhar no Git em diversos branches sem interação com a rede. Cada vez que você executar os comandos git pull ou git fetch, você atualiza os branches de rastreamento remoto.
+
+git fetch e git merge
+git pull é uma combinação de comandos, equivalente a git fetch e git merge juntos.
+
+git fetch
+Sozinho, o git fetch atualiza todos os branches de rastreamento remotos do repositório local. Nenhuma mudança é refletida de fato em qualquer um dos branches de trabalho locais.
+
+git merge
+Sem argumentos, o git merge fará o merge do branch de rastreamento remoto correspondente ao branch de trabalho local.
+
+git pull
+O git fetch atualiza os branches de rastreamento remoto. O git merge atualiza o branch atual com o branch de rastreamento remoto correspondente. Usando o git pull, você tem as duas partes dessas atualizações. Isso, no entanto, significa que, se você fez o checkout no branch feature e executar o comando git pull, ao fazer o checkout em master/main, as novas atualizações não serão incluídas. Sempre que você fizer o checkout para outro branch que possa ter novas alterações, sempre é uma boa ideia executar o comando git pull.
+
+git pull nos IDEs
+Linguagens comuns em outros IDEs podem não incluir a palavra pull. Se você buscar as palavras git pull e não as encontrar, busque pela palavra sync em vez disso.
+
+Fazendo o fetch de um PR (Pull Request) remoto em seu repositório local
+Para fins de conferência, é preciso fazer o fetch dos PRs de um repositório remoto para o repositório local. Você pode usar o comando git fetch conforme vemos abaixo para conseguir isso.
+
+git fetch origin pull/ID/head:NOME-BRANCH
+
+ID é o id do pull request e NOME-BRANCH é o nome do branch que você quer criar. Quando o branch for criado, você pode usar o comando git checkout para mudar para aquele branch.
+
+Outros recursos sobre git no editorial do freecodecamp.org (em inglês)
+Git merge
+Git checkout
+Git commit
+Git stash
+Git branch
+Para ver os recursos sobre git já traduzidos, acesse o editorial do freecodecamp.org em português e busque pela palavra git.
+Boa programação! 😀
+
+
+Daniel Rosa
+Tradutor: Daniel Rosa
+Um profissional dos idiomas humanos apaixonado por linguagens de computador. | A world languages professional in love with computer languages.
+
+freeCodeCamp.org
+Autor: freeCodeCamp.org (em inglês)
+Ler mais publicações.
+      
