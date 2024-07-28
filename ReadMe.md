@@ -14,3 +14,5 @@ Revisão da aula
 Revisão de código de envio (push) - do Pc (Git) para o GitHub
 
 ok
+
+Correção e teste dirato pelo GitHub  
