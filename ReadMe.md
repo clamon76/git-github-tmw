@@ -10,5 +10,7 @@ Desde como criar um repositório local, até merge de branches.
 #### Dia 02
 
 Revisão da aula
-Revisão de código de envio (push) - do Pc (Git) para o GitGub
+
+Revisão de código de envio (push) - do Pc (Git) para o GitHub
+
 ok
