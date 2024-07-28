@@ -1,0 +1,3 @@
+Tentando resolver o erro
+
+Git não envia commits para servidor. Erro: Everything up-to-date
