@@ -1,5 +1,7 @@
 código Pull
 
+link original: https://www.freecodecamp.org/portuguese/news/git-pull-explicado/
+
 Git pull explicado
 Daniel Rosa
 Tradutor: Daniel Rosa
